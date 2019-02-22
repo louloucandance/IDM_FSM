@@ -31,106 +31,72 @@ class FSMGenerator extends AbstractGenerator {
 	//stocker les valeurs de s dans un tableau dans le foreach et le récupérer dans le FMS.
 		def printFSMClass(ArrayList listState){
 		val lengthState = listState.length()
+		val position = 0
 		'''
-		public class FSM{
-			State actualState;
+			public class FSM{
+			State currentState;
 			
 			public FSM(){
-				actualState = new «listState.get(0)»();
+				currentState = new «listState.get(0)»();
+				for(int position < «lengthState» ; «position» = 0; «position»++){
+					if «listState.get(position)» == currentState)
+						break;
+				}
 			}
 	
-			public void on(){
-				
-				if(actualState instanceof «listState.get(1)»)
-					actualState = new «listState.get(0)»();
+			public void on(){				
+				if(currentState instanceof «listState.get(position)»)
+					currentState = new «listState.get(position-1%lengthState)»();
 			}
 			
 			public void off(){
-				if(actualState instanceof «listState.get(0)»)
-					actualState = new «listState.get(1)»();
+				if(currentState instanceof «listState.get(position)»)
+					currentState = new «listState.get(position+1%lengthState)»();
 			}
 			
 			public void stop(){
-				actualState = new «listState.get(lengthState)»();
+				currentState = new «listState.get(lengthState)»();
+			}
+			
+			public void step(String trigger){
+				switch (currentState){
+					case «listState.get(position%lengthState)» : 
+						if(trigger == currentState.transOut)
+							currentState = new «listState.get(position+1%lengthState)»();
+					break;
+					case «listState.get(position%lengthState)» : 
+						if(trigger == currentState.transOut)
+							currentState = new «listState.get(position-1%lengthState)»();
+					break;
+				}
 			}
 			
 			public static void main(){
 				this.on();
-				print actualState;
+				print currentState;
 				this.off();
-				print actualState;
+				print currentState;
 				this.on();
-				print actualState;
+				print currentState;
 				this.off();
-				print actualState;
+				print currentState;
 				this.off();
-				print actualState;
+				print currentState;
 				this.on();
-				print actualState;
+				print currentState;
 				this.on();
-				print actualState;
+				print currentState;
 				this.stop();
-				print actualState;
+				print currentState;
 				this.off();
-				print actualState;
+				print currentState;
 				this.on();
-				print actualState;
+				print currentState;
 				
 			}
 		}
 		'''
-	}
-	/* 
-	def printFSMClass(){
-		'''
-		public class FSM{
-			State actualState;
-			
-			public FSM(){
-				actualState = new Open();
-			}
-	
-			public void on(){
-				
-				if(actualState instanceof Close)
-					actualState = new ;
-			}
-			
-			public void off(){
-				if(actualState instanceof Open)
-					actualState = new Close();
-			}
-			
-			public void stop(){
-				actualState = new Down();
-			}
-			
-			public static void main(){
-				this.on();
-				print actualState;
-				this.off();
-				print actualState;
-				this.on();
-				print actualState;
-				this.off();
-				print actualState;
-				this.off();
-				print actualState;
-				this.on();
-				print actualState;
-				this.on();
-				print actualState;
-				this.stop();
-				print actualState;
-				this.off();
-				print actualState;
-				this.on();
-				print actualState;
-				
-			}
-		}
-		'''
-	}*/
+	} 
 	
 	def print(State s){
 		var name = s.name;
@@ -149,9 +115,9 @@ class FSMGenerator extends AbstractGenerator {
 	}
 	
 	
-		def printStateClass(){
+		def printStepClass(){
 		'''
-		public abstract class State {
+		public abstract class Step {
 			private String name;
 			private Outgoing transOut;
 			private Incoming transIn;

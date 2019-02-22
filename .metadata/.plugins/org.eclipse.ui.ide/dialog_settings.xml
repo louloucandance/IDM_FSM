@@ -30,6 +30,9 @@
 		<item value="org.eclipse.jgit:4.9.2.201712150930-r"/>
 		<item value="org.eclipse.m2e.feature:1.8.3.20180227-2137"/>
 		<item value="org.eclipse.m2e.logback.feature:1.8.3.20180227-2137"/>
+		<item value="org.eclipse.m2m.atl.doc:3.5.0.v201405260755"/>
+		<item value="org.eclipse.m2m.atl.examples:3.5.0.v201405260755"/>
+		<item value="org.eclipse.m2m.atl:3.5.0.v201405260755"/>
 		<item value="org.eclipse.m2m.qvt.oml.debug:2.7.0.v20170604-1316"/>
 		<item value="org.eclipse.m2m.qvt.oml.doc:3.6.0.v20170604-1316"/>
 		<item value="org.eclipse.m2m.qvt.oml.editor:3.7.0.v20170604-1316"/>
@@ -38,6 +41,9 @@
 		<item value="org.eclipse.m2m.qvt.oml:3.7.0.v20170604-1316"/>
 		<item value="org.eclipse.ocl.doc:3.7.0.v20170607-1133"/>
 		<item value="org.eclipse.ocl.edit:5.1.0.v20170120-1018"/>
+		<item value="org.eclipse.ocl.examples.classic:5.3.0.v20170607-1133"/>
+		<item value="org.eclipse.ocl.examples.unified:4.2.0.v20170613-1432"/>
+		<item value="org.eclipse.ocl.examples:6.3.0.v20170613-1432"/>
 		<item value="org.eclipse.ocl.ui:2.2.0.v20170120-1018"/>
 		<item value="org.eclipse.ocl.uml:5.3.0.v20170522-1736"/>
 		<item value="org.eclipse.ocl:3.7.0.v20170522-1736"/>

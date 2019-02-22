@@ -257,21 +257,28 @@ ruleTransition returns [EObject current=null]
 	leaveRule();
 }:
 	(
+		otherlv_0='transition'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getTransitionAccess().getTransitionKeyword_0());
+		}
 		(
-			otherlv_0='close'
-			{
-				newLeafNode(otherlv_0, grammarAccess.getTransitionAccess().getCloseKeyword_0_0());
-			}
-			    |
-			otherlv_1='open'
-			{
-				newLeafNode(otherlv_1, grammarAccess.getTransitionAccess().getOpenKeyword_0_1());
-			}
-			    |
-			otherlv_2='stop'
-			{
-				newLeafNode(otherlv_2, grammarAccess.getTransitionAccess().getStopKeyword_0_2());
-			}
+			(
+				{
+					newCompositeNode(grammarAccess.getTransitionAccess().getNameEStringParserRuleCall_1_0());
+				}
+				lv_name_1_0=ruleEString
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getTransitionRule());
+					}
+					set(
+						$current,
+						"name",
+						lv_name_1_0,
+						"fr.ice.m1.fsm.FSM.EString");
+					afterParserOrEnumRuleCall();
+				}
+			)
 		)
 		(
 			(
@@ -281,7 +288,7 @@ ruleTransition returns [EObject current=null]
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getTransitionAccess().getToStateCrossReference_1_0());
+					newCompositeNode(grammarAccess.getTransitionAccess().getToStateCrossReference_2_0());
 				}
 				ruleEString
 				{
@@ -289,9 +296,9 @@ ruleTransition returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_4='->'
+		otherlv_3='->'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getTransitionAccess().getHyphenMinusGreaterThanSignKeyword_2());
+			newLeafNode(otherlv_3, grammarAccess.getTransitionAccess().getHyphenMinusGreaterThanSignKeyword_3());
 		}
 		(
 			(
@@ -301,7 +308,7 @@ ruleTransition returns [EObject current=null]
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getTransitionAccess().getFromStateCrossReference_3_0());
+					newCompositeNode(grammarAccess.getTransitionAccess().getFromStateCrossReference_4_0());
 				}
 				ruleEString
 				{

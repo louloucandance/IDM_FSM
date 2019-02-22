@@ -3,17 +3,13 @@
  */
 package fr.ice.m1.fsm.generator;
 
-import fr.ice.m1.fsm.model.FSM;
 import fr.ice.m1.fsm.model.State;
 import java.util.ArrayList;
-import java.util.function.Consumer;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.AbstractGenerator;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
-import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.Conversions;
 
 /**
@@ -25,170 +21,213 @@ import org.eclipse.xtext.xbase.lib.Conversions;
 public class FSMGenerator extends AbstractGenerator {
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
-    EObject _get = resource.getContents().get(0);
-    FSM myfsm = ((FSM) _get);
-    fsa.generateFile("State.java", this.printStateClass());
-    final ArrayList<String> listState = CollectionLiterals.<String>newArrayList();
-    final Consumer<State> _function = (State s) -> {
-      String _name = s.getName();
-      String _plus = (_name + ".java");
-      fsa.generateFile(_plus, this.print(s));
-      listState.add(s.getName());
-    };
-    myfsm.getState().forEach(_function);
-    fsa.generateFile("FSM.java", this.printFSMClass(listState));
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe method or field printStateClass is undefined");
   }
   
   public CharSequence printFSMClass(final ArrayList listState) {
     CharSequence _xblockexpression = null;
     {
       final int lengthState = ((Object[])Conversions.unwrapArray(listState, Object.class)).length;
+      final int position = 0;
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("public class FSM{");
       _builder.newLine();
-      _builder.append("\t");
-      _builder.append("State actualState;");
+      _builder.append("State currentState;");
       _builder.newLine();
-      _builder.append("\t");
       _builder.newLine();
-      _builder.append("\t");
       _builder.append("public FSM(){");
       _builder.newLine();
-      _builder.append("\t\t");
-      _builder.append("actualState = new ");
+      _builder.append("\t");
+      _builder.append("currentState = new ");
       Object _get = listState.get(0);
-      _builder.append(_get, "\t\t");
+      _builder.append(_get, "\t");
       _builder.append("();");
       _builder.newLineIfNotEmpty();
       _builder.append("\t");
-      _builder.append("}");
-      _builder.newLine();
-      _builder.append("\t");
-      _builder.newLine();
-      _builder.append("\t");
-      _builder.append("public void on(){");
-      _builder.newLine();
+      _builder.append("for(int position < ");
+      _builder.append(lengthState, "\t");
+      _builder.append(" ; ");
+      _builder.append(position, "\t");
+      _builder.append(" = 0; ");
+      _builder.append(position, "\t");
+      _builder.append("++){");
+      _builder.newLineIfNotEmpty();
       _builder.append("\t\t");
-      _builder.newLine();
-      _builder.append("\t\t");
-      _builder.append("if(actualState instanceof ");
-      Object _get_1 = listState.get(1);
+      _builder.append("if ");
+      Object _get_1 = listState.get(position);
       _builder.append(_get_1, "\t\t");
-      _builder.append(")");
+      _builder.append(" == currentState)");
       _builder.newLineIfNotEmpty();
       _builder.append("\t\t\t");
-      _builder.append("actualState = new ");
-      Object _get_2 = listState.get(0);
-      _builder.append(_get_2, "\t\t\t");
-      _builder.append("();");
-      _builder.newLineIfNotEmpty();
+      _builder.append("break;");
+      _builder.newLine();
       _builder.append("\t");
+      _builder.append("}");
+      _builder.newLine();
       _builder.append("}");
       _builder.newLine();
       _builder.append("\t");
       _builder.newLine();
+      _builder.append("public void on(){\t\t\t\t");
+      _builder.newLine();
       _builder.append("\t");
+      _builder.append("if(currentState instanceof ");
+      Object _get_2 = listState.get(position);
+      _builder.append(_get_2, "\t");
+      _builder.append(")");
+      _builder.newLineIfNotEmpty();
+      _builder.append("\t\t");
+      _builder.append("currentState = new ");
+      Object _get_3 = listState.get((position - (1 % lengthState)));
+      _builder.append(_get_3, "\t\t");
+      _builder.append("();");
+      _builder.newLineIfNotEmpty();
+      _builder.append("}");
+      _builder.newLine();
+      _builder.newLine();
       _builder.append("public void off(){");
       _builder.newLine();
-      _builder.append("\t\t");
-      _builder.append("if(actualState instanceof ");
-      Object _get_3 = listState.get(0);
-      _builder.append(_get_3, "\t\t");
+      _builder.append("\t");
+      _builder.append("if(currentState instanceof ");
+      Object _get_4 = listState.get(position);
+      _builder.append(_get_4, "\t");
       _builder.append(")");
       _builder.newLineIfNotEmpty();
-      _builder.append("\t\t\t");
-      _builder.append("actualState = new ");
-      Object _get_4 = listState.get(1);
-      _builder.append(_get_4, "\t\t\t");
-      _builder.append("();");
-      _builder.newLineIfNotEmpty();
-      _builder.append("\t");
-      _builder.append("}");
-      _builder.newLine();
-      _builder.append("\t");
-      _builder.newLine();
-      _builder.append("\t");
-      _builder.append("public void stop(){");
-      _builder.newLine();
       _builder.append("\t\t");
-      _builder.append("actualState = new ");
-      Object _get_5 = listState.get(lengthState);
+      _builder.append("currentState = new ");
+      Object _get_5 = listState.get((position + (1 % lengthState)));
       _builder.append(_get_5, "\t\t");
       _builder.append("();");
       _builder.newLineIfNotEmpty();
+      _builder.append("}");
+      _builder.newLine();
+      _builder.newLine();
+      _builder.append("public void stop(){");
+      _builder.newLine();
+      _builder.append("\t");
+      _builder.append("currentState = new ");
+      Object _get_6 = listState.get(lengthState);
+      _builder.append(_get_6, "\t");
+      _builder.append("();");
+      _builder.newLineIfNotEmpty();
+      _builder.append("}");
+      _builder.newLine();
+      _builder.newLine();
+      _builder.append("public void step(String trigger){");
+      _builder.newLine();
+      _builder.append("\t");
+      _builder.append("switch (currentState){");
+      _builder.newLine();
+      _builder.append("\t\t");
+      _builder.append("case ");
+      Object _get_7 = listState.get((position % lengthState));
+      _builder.append(_get_7, "\t\t");
+      _builder.append(" : ");
+      _builder.newLineIfNotEmpty();
+      _builder.append("\t\t\t");
+      _builder.append("if(trigger == currentState.transOut)");
+      _builder.newLine();
+      _builder.append("\t\t\t\t");
+      _builder.append("currentState = new ");
+      Object _get_8 = listState.get((position + (1 % lengthState)));
+      _builder.append(_get_8, "\t\t\t\t");
+      _builder.append("();");
+      _builder.newLineIfNotEmpty();
+      _builder.append("\t\t");
+      _builder.append("break;");
+      _builder.newLine();
+      _builder.append("\t\t");
+      _builder.append("case ");
+      Object _get_9 = listState.get((position % lengthState));
+      _builder.append(_get_9, "\t\t");
+      _builder.append(" : ");
+      _builder.newLineIfNotEmpty();
+      _builder.append("\t\t\t");
+      _builder.append("if(trigger == currentState.transOut)");
+      _builder.newLine();
+      _builder.append("\t\t\t\t");
+      _builder.append("currentState = new ");
+      Object _get_10 = listState.get((position - (1 % lengthState)));
+      _builder.append(_get_10, "\t\t\t\t");
+      _builder.append("();");
+      _builder.newLineIfNotEmpty();
+      _builder.append("\t\t");
+      _builder.append("break;");
+      _builder.newLine();
       _builder.append("\t");
       _builder.append("}");
       _builder.newLine();
-      _builder.append("\t");
+      _builder.append("}");
       _builder.newLine();
-      _builder.append("\t");
+      _builder.newLine();
       _builder.append("public static void main(){");
       _builder.newLine();
-      _builder.append("\t\t");
+      _builder.append("\t");
       _builder.append("this.on();");
-      _builder.newLine();
-      _builder.append("\t\t");
-      _builder.append("print actualState;");
-      _builder.newLine();
-      _builder.append("\t\t");
-      _builder.append("this.off();");
-      _builder.newLine();
-      _builder.append("\t\t");
-      _builder.append("print actualState;");
-      _builder.newLine();
-      _builder.append("\t\t");
-      _builder.append("this.on();");
-      _builder.newLine();
-      _builder.append("\t\t");
-      _builder.append("print actualState;");
-      _builder.newLine();
-      _builder.append("\t\t");
-      _builder.append("this.off();");
-      _builder.newLine();
-      _builder.append("\t\t");
-      _builder.append("print actualState;");
-      _builder.newLine();
-      _builder.append("\t\t");
-      _builder.append("this.off();");
-      _builder.newLine();
-      _builder.append("\t\t");
-      _builder.append("print actualState;");
-      _builder.newLine();
-      _builder.append("\t\t");
-      _builder.append("this.on();");
-      _builder.newLine();
-      _builder.append("\t\t");
-      _builder.append("print actualState;");
-      _builder.newLine();
-      _builder.append("\t\t");
-      _builder.append("this.on();");
-      _builder.newLine();
-      _builder.append("\t\t");
-      _builder.append("print actualState;");
-      _builder.newLine();
-      _builder.append("\t\t");
-      _builder.append("this.stop();");
-      _builder.newLine();
-      _builder.append("\t\t");
-      _builder.append("print actualState;");
-      _builder.newLine();
-      _builder.append("\t\t");
-      _builder.append("this.off();");
-      _builder.newLine();
-      _builder.append("\t\t");
-      _builder.append("print actualState;");
-      _builder.newLine();
-      _builder.append("\t\t");
-      _builder.append("this.on();");
-      _builder.newLine();
-      _builder.append("\t\t");
-      _builder.append("print actualState;");
-      _builder.newLine();
-      _builder.append("\t\t");
       _builder.newLine();
       _builder.append("\t");
+      _builder.append("print currentState;");
+      _builder.newLine();
+      _builder.append("\t");
+      _builder.append("this.off();");
+      _builder.newLine();
+      _builder.append("\t");
+      _builder.append("print currentState;");
+      _builder.newLine();
+      _builder.append("\t");
+      _builder.append("this.on();");
+      _builder.newLine();
+      _builder.append("\t");
+      _builder.append("print currentState;");
+      _builder.newLine();
+      _builder.append("\t");
+      _builder.append("this.off();");
+      _builder.newLine();
+      _builder.append("\t");
+      _builder.append("print currentState;");
+      _builder.newLine();
+      _builder.append("\t");
+      _builder.append("this.off();");
+      _builder.newLine();
+      _builder.append("\t");
+      _builder.append("print currentState;");
+      _builder.newLine();
+      _builder.append("\t");
+      _builder.append("this.on();");
+      _builder.newLine();
+      _builder.append("\t");
+      _builder.append("print currentState;");
+      _builder.newLine();
+      _builder.append("\t");
+      _builder.append("this.on();");
+      _builder.newLine();
+      _builder.append("\t");
+      _builder.append("print currentState;");
+      _builder.newLine();
+      _builder.append("\t");
+      _builder.append("this.stop();");
+      _builder.newLine();
+      _builder.append("\t");
+      _builder.append("print currentState;");
+      _builder.newLine();
+      _builder.append("\t");
+      _builder.append("this.off();");
+      _builder.newLine();
+      _builder.append("\t");
+      _builder.append("print currentState;");
+      _builder.newLine();
+      _builder.append("\t");
+      _builder.append("this.on();");
+      _builder.newLine();
+      _builder.append("\t");
+      _builder.append("print currentState;");
+      _builder.newLine();
+      _builder.append("\t");
+      _builder.newLine();
       _builder.append("}");
       _builder.newLine();
+      _builder.append("\t\t");
       _builder.append("}");
       _builder.newLine();
       _xblockexpression = _builder;
@@ -196,58 +235,6 @@ public class FSMGenerator extends AbstractGenerator {
     return _xblockexpression;
   }
   
-  /**
-   * def printFSMClass(){
-   * '''
-   * public class FSM{
-   * State actualState;
-   * 
-   * public FSM(){
-   * actualState = new Open();
-   * }
-   * 
-   * public void on(){
-   * 
-   * if(actualState instanceof Close)
-   * actualState = new ;
-   * }
-   * 
-   * public void off(){
-   * if(actualState instanceof Open)
-   * actualState = new Close();
-   * }
-   * 
-   * public void stop(){
-   * actualState = new Down();
-   * }
-   * 
-   * public static void main(){
-   * this.on();
-   * print actualState;
-   * this.off();
-   * print actualState;
-   * this.on();
-   * print actualState;
-   * this.off();
-   * print actualState;
-   * this.off();
-   * print actualState;
-   * this.on();
-   * print actualState;
-   * this.on();
-   * print actualState;
-   * this.stop();
-   * print actualState;
-   * this.off();
-   * print actualState;
-   * this.on();
-   * print actualState;
-   * 
-   * }
-   * }
-   * '''
-   * }
-   */
   public CharSequence print(final State s) {
     CharSequence _xblockexpression = null;
     {
@@ -291,9 +278,9 @@ public class FSMGenerator extends AbstractGenerator {
     return _xblockexpression;
   }
   
-  public CharSequence printStateClass() {
+  public CharSequence printStepClass() {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("public abstract class State {");
+    _builder.append("public abstract class Step {");
     _builder.newLine();
     _builder.append("\t");
     _builder.append("private String name;");

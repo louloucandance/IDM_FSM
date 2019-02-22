@@ -83,18 +83,21 @@ public class FSMSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Transition returns Transition
 	 *
 	 * Constraint:
-	 *     (to=[State|EString] from=[State|EString])
+	 *     (name=EString to=[State|EString] from=[State|EString])
 	 */
 	protected void sequence_Transition(ISerializationContext context, Transition semanticObject) {
 		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, ModelPackage.Literals.TRANSITION__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ModelPackage.Literals.TRANSITION__NAME));
 			if (transientValues.isValueTransient(semanticObject, ModelPackage.Literals.TRANSITION__TO) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ModelPackage.Literals.TRANSITION__TO));
 			if (transientValues.isValueTransient(semanticObject, ModelPackage.Literals.TRANSITION__FROM) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ModelPackage.Literals.TRANSITION__FROM));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getTransitionAccess().getToStateEStringParserRuleCall_1_0_1(), semanticObject.eGet(ModelPackage.Literals.TRANSITION__TO, false));
-		feeder.accept(grammarAccess.getTransitionAccess().getFromStateEStringParserRuleCall_3_0_1(), semanticObject.eGet(ModelPackage.Literals.TRANSITION__FROM, false));
+		feeder.accept(grammarAccess.getTransitionAccess().getNameEStringParserRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getTransitionAccess().getToStateEStringParserRuleCall_2_0_1(), semanticObject.eGet(ModelPackage.Literals.TRANSITION__TO, false));
+		feeder.accept(grammarAccess.getTransitionAccess().getFromStateEStringParserRuleCall_4_0_1(), semanticObject.eGet(ModelPackage.Literals.TRANSITION__FROM, false));
 		feeder.finish();
 	}
 	

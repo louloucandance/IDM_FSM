@@ -33,7 +33,6 @@ public class FSMParser extends AbstractContentAssistParser {
 				{
 					put(grammarAccess.getFSMAccess().getAlternatives_3(), "rule__FSM__Alternatives_3");
 					put(grammarAccess.getEStringAccess().getAlternatives(), "rule__EString__Alternatives");
-					put(grammarAccess.getTransitionAccess().getAlternatives_0(), "rule__Transition__Alternatives_0");
 					put(grammarAccess.getFSMAccess().getGroup(), "rule__FSM__Group__0");
 					put(grammarAccess.getFSMAccess().getGroup_3_0(), "rule__FSM__Group_3_0__0");
 					put(grammarAccess.getFSMAccess().getGroup_3_1(), "rule__FSM__Group_3_1__0");
@@ -43,8 +42,9 @@ public class FSMParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFSMAccess().getStateAssignment_3_0_1(), "rule__FSM__StateAssignment_3_0_1");
 					put(grammarAccess.getFSMAccess().getTransitionAssignment_3_1_1(), "rule__FSM__TransitionAssignment_3_1_1");
 					put(grammarAccess.getStateAccess().getNameAssignment_1(), "rule__State__NameAssignment_1");
-					put(grammarAccess.getTransitionAccess().getToAssignment_1(), "rule__Transition__ToAssignment_1");
-					put(grammarAccess.getTransitionAccess().getFromAssignment_3(), "rule__Transition__FromAssignment_3");
+					put(grammarAccess.getTransitionAccess().getNameAssignment_1(), "rule__Transition__NameAssignment_1");
+					put(grammarAccess.getTransitionAccess().getToAssignment_2(), "rule__Transition__ToAssignment_2");
+					put(grammarAccess.getTransitionAccess().getFromAssignment_4(), "rule__Transition__FromAssignment_4");
 				}
 			};
 		}

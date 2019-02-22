@@ -11,9 +11,6 @@ import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AbstractElementAlias;
-import org.eclipse.xtext.serializer.analysis.GrammarAlias.AlternativeAlias;
-import org.eclipse.xtext.serializer.analysis.GrammarAlias.TokenAlias;
-import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynNavigable;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynTransition;
 import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 
@@ -21,12 +18,10 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class FSMSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected FSMGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_Transition_CloseKeyword_0_0_or_OpenKeyword_0_1_or_StopKeyword_0_2;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (FSMGrammarAccess) access;
-		match_Transition_CloseKeyword_0_0_or_OpenKeyword_0_1_or_StopKeyword_0_2 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getTransitionAccess().getCloseKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getTransitionAccess().getOpenKeyword_0_1()), new TokenAlias(false, false, grammarAccess.getTransitionAccess().getStopKeyword_0_2()));
 	}
 	
 	@Override
@@ -41,21 +36,8 @@ public class FSMSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_Transition_CloseKeyword_0_0_or_OpenKeyword_0_1_or_StopKeyword_0_2.equals(syntax))
-				emit_Transition_CloseKeyword_0_0_or_OpenKeyword_0_1_or_StopKeyword_0_2(semanticObject, getLastNavigableState(), syntaxNodes);
-			else acceptNodes(getLastNavigableState(), syntaxNodes);
+			acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
-	/**
-	 * Ambiguous syntax:
-	 *     'close' | 'open' | 'stop'
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) to=[State|EString]
-	 */
-	protected void emit_Transition_CloseKeyword_0_0_or_OpenKeyword_0_1_or_StopKeyword_0_2(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
 }

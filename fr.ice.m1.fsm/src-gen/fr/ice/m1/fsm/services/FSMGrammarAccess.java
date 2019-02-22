@@ -136,58 +136,54 @@ public class FSMGrammarAccess extends AbstractGrammarElementFinder {
 	public class TransitionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.ice.m1.fsm.FSM.Transition");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
-		private final Keyword cCloseKeyword_0_0 = (Keyword)cAlternatives_0.eContents().get(0);
-		private final Keyword cOpenKeyword_0_1 = (Keyword)cAlternatives_0.eContents().get(1);
-		private final Keyword cStopKeyword_0_2 = (Keyword)cAlternatives_0.eContents().get(2);
-		private final Assignment cToAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final CrossReference cToStateCrossReference_1_0 = (CrossReference)cToAssignment_1.eContents().get(0);
-		private final RuleCall cToStateEStringParserRuleCall_1_0_1 = (RuleCall)cToStateCrossReference_1_0.eContents().get(1);
-		private final Keyword cHyphenMinusGreaterThanSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cFromAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final CrossReference cFromStateCrossReference_3_0 = (CrossReference)cFromAssignment_3.eContents().get(0);
-		private final RuleCall cFromStateEStringParserRuleCall_3_0_1 = (RuleCall)cFromStateCrossReference_3_0.eContents().get(1);
+		private final Keyword cTransitionKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameEStringParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Assignment cToAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final CrossReference cToStateCrossReference_2_0 = (CrossReference)cToAssignment_2.eContents().get(0);
+		private final RuleCall cToStateEStringParserRuleCall_2_0_1 = (RuleCall)cToStateCrossReference_2_0.eContents().get(1);
+		private final Keyword cHyphenMinusGreaterThanSignKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cFromAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final CrossReference cFromStateCrossReference_4_0 = (CrossReference)cFromAssignment_4.eContents().get(0);
+		private final RuleCall cFromStateEStringParserRuleCall_4_0_1 = (RuleCall)cFromStateCrossReference_4_0.eContents().get(1);
 		
 		////declaration of transition by an action and the two states affected
 		//Transition:
-		//	('close' | 'open' | 'stop') to=[State|EString] '->' from=[State|EString];
+		//	'transition' name=EString to=[State|EString] '->' from=[State|EString];
 		@Override public ParserRule getRule() { return rule; }
 		
-		//('close' | 'open' | 'stop') to=[State|EString] '->' from=[State|EString]
+		//'transition' name=EString to=[State|EString] '->' from=[State|EString]
 		public Group getGroup() { return cGroup; }
 		
-		//'close' | 'open' | 'stop'
-		public Alternatives getAlternatives_0() { return cAlternatives_0; }
+		//'transition'
+		public Keyword getTransitionKeyword_0() { return cTransitionKeyword_0; }
 		
-		//'close'
-		public Keyword getCloseKeyword_0_0() { return cCloseKeyword_0_0; }
+		//name=EString
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
-		//'open'
-		public Keyword getOpenKeyword_0_1() { return cOpenKeyword_0_1; }
-		
-		//'stop'
-		public Keyword getStopKeyword_0_2() { return cStopKeyword_0_2; }
+		//EString
+		public RuleCall getNameEStringParserRuleCall_1_0() { return cNameEStringParserRuleCall_1_0; }
 		
 		//to=[State|EString]
-		public Assignment getToAssignment_1() { return cToAssignment_1; }
+		public Assignment getToAssignment_2() { return cToAssignment_2; }
 		
 		//[State|EString]
-		public CrossReference getToStateCrossReference_1_0() { return cToStateCrossReference_1_0; }
+		public CrossReference getToStateCrossReference_2_0() { return cToStateCrossReference_2_0; }
 		
 		//EString
-		public RuleCall getToStateEStringParserRuleCall_1_0_1() { return cToStateEStringParserRuleCall_1_0_1; }
+		public RuleCall getToStateEStringParserRuleCall_2_0_1() { return cToStateEStringParserRuleCall_2_0_1; }
 		
 		//'->'
-		public Keyword getHyphenMinusGreaterThanSignKeyword_2() { return cHyphenMinusGreaterThanSignKeyword_2; }
+		public Keyword getHyphenMinusGreaterThanSignKeyword_3() { return cHyphenMinusGreaterThanSignKeyword_3; }
 		
 		//from=[State|EString]
-		public Assignment getFromAssignment_3() { return cFromAssignment_3; }
+		public Assignment getFromAssignment_4() { return cFromAssignment_4; }
 		
 		//[State|EString]
-		public CrossReference getFromStateCrossReference_3_0() { return cFromStateCrossReference_3_0; }
+		public CrossReference getFromStateCrossReference_4_0() { return cFromStateCrossReference_4_0; }
 		
 		//EString
-		public RuleCall getFromStateEStringParserRuleCall_3_0_1() { return cFromStateEStringParserRuleCall_3_0_1; }
+		public RuleCall getFromStateEStringParserRuleCall_4_0_1() { return cFromStateEStringParserRuleCall_4_0_1; }
 	}
 	
 	
@@ -274,7 +270,7 @@ public class FSMGrammarAccess extends AbstractGrammarElementFinder {
 	
 	////declaration of transition by an action and the two states affected
 	//Transition:
-	//	('close' | 'open' | 'stop') to=[State|EString] '->' from=[State|EString];
+	//	'transition' name=EString to=[State|EString] '->' from=[State|EString];
 	public TransitionElements getTransitionAccess() {
 		return pTransition;
 	}

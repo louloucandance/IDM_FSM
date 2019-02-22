@@ -22,16 +22,13 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalFSMParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'close'", "'open'", "'stop'", "'FSM'", "'state'", "'transition'", "'->'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'FSM'", "'state'", "'transition'", "'->'"
     };
     public static final int RULE_ID=5;
     public static final int RULE_WS=9;
     public static final int RULE_STRING=4;
     public static final int RULE_ANY_OTHER=10;
     public static final int RULE_SL_COMMENT=8;
-    public static final int T__15=15;
-    public static final int T__16=16;
-    public static final int T__17=17;
     public static final int RULE_INT=6;
     public static final int T__11=11;
     public static final int RULE_ML_COMMENT=7;
@@ -394,10 +391,10 @@ public class InternalFSMParser extends AbstractInternalContentAssistParser {
             int alt1=2;
             int LA1_0 = input.LA(1);
 
-            if ( (LA1_0==15) ) {
+            if ( (LA1_0==12) ) {
                 alt1=1;
             }
-            else if ( (LA1_0==16) ) {
+            else if ( (LA1_0==13) ) {
                 alt1=2;
             }
             else {
@@ -545,110 +542,15 @@ public class InternalFSMParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__EString__Alternatives"
 
 
-    // $ANTLR start "rule__Transition__Alternatives_0"
-    // InternalFSM.g:194:1: rule__Transition__Alternatives_0 : ( ( 'close' ) | ( 'open' ) | ( 'stop' ) );
-    public final void rule__Transition__Alternatives_0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalFSM.g:198:1: ( ( 'close' ) | ( 'open' ) | ( 'stop' ) )
-            int alt3=3;
-            switch ( input.LA(1) ) {
-            case 11:
-                {
-                alt3=1;
-                }
-                break;
-            case 12:
-                {
-                alt3=2;
-                }
-                break;
-            case 13:
-                {
-                alt3=3;
-                }
-                break;
-            default:
-                NoViableAltException nvae =
-                    new NoViableAltException("", 3, 0, input);
-
-                throw nvae;
-            }
-
-            switch (alt3) {
-                case 1 :
-                    // InternalFSM.g:199:2: ( 'close' )
-                    {
-                    // InternalFSM.g:199:2: ( 'close' )
-                    // InternalFSM.g:200:3: 'close'
-                    {
-                     before(grammarAccess.getTransitionAccess().getCloseKeyword_0_0()); 
-                    match(input,11,FOLLOW_2); 
-                     after(grammarAccess.getTransitionAccess().getCloseKeyword_0_0()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // InternalFSM.g:205:2: ( 'open' )
-                    {
-                    // InternalFSM.g:205:2: ( 'open' )
-                    // InternalFSM.g:206:3: 'open'
-                    {
-                     before(grammarAccess.getTransitionAccess().getOpenKeyword_0_1()); 
-                    match(input,12,FOLLOW_2); 
-                     after(grammarAccess.getTransitionAccess().getOpenKeyword_0_1()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 3 :
-                    // InternalFSM.g:211:2: ( 'stop' )
-                    {
-                    // InternalFSM.g:211:2: ( 'stop' )
-                    // InternalFSM.g:212:3: 'stop'
-                    {
-                     before(grammarAccess.getTransitionAccess().getStopKeyword_0_2()); 
-                    match(input,13,FOLLOW_2); 
-                     after(grammarAccess.getTransitionAccess().getStopKeyword_0_2()); 
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Transition__Alternatives_0"
-
-
     // $ANTLR start "rule__FSM__Group__0"
-    // InternalFSM.g:221:1: rule__FSM__Group__0 : rule__FSM__Group__0__Impl rule__FSM__Group__1 ;
+    // InternalFSM.g:194:1: rule__FSM__Group__0 : rule__FSM__Group__0__Impl rule__FSM__Group__1 ;
     public final void rule__FSM__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalFSM.g:225:1: ( rule__FSM__Group__0__Impl rule__FSM__Group__1 )
-            // InternalFSM.g:226:2: rule__FSM__Group__0__Impl rule__FSM__Group__1
+            // InternalFSM.g:198:1: ( rule__FSM__Group__0__Impl rule__FSM__Group__1 )
+            // InternalFSM.g:199:2: rule__FSM__Group__0__Impl rule__FSM__Group__1
             {
             pushFollow(FOLLOW_3);
             rule__FSM__Group__0__Impl();
@@ -679,21 +581,21 @@ public class InternalFSMParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FSM__Group__0__Impl"
-    // InternalFSM.g:233:1: rule__FSM__Group__0__Impl : ( () ) ;
+    // InternalFSM.g:206:1: rule__FSM__Group__0__Impl : ( () ) ;
     public final void rule__FSM__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalFSM.g:237:1: ( ( () ) )
-            // InternalFSM.g:238:1: ( () )
+            // InternalFSM.g:210:1: ( ( () ) )
+            // InternalFSM.g:211:1: ( () )
             {
-            // InternalFSM.g:238:1: ( () )
-            // InternalFSM.g:239:2: ()
+            // InternalFSM.g:211:1: ( () )
+            // InternalFSM.g:212:2: ()
             {
              before(grammarAccess.getFSMAccess().getFSMAction_0()); 
-            // InternalFSM.g:240:2: ()
-            // InternalFSM.g:240:3: 
+            // InternalFSM.g:213:2: ()
+            // InternalFSM.g:213:3: 
             {
             }
 
@@ -716,14 +618,14 @@ public class InternalFSMParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FSM__Group__1"
-    // InternalFSM.g:248:1: rule__FSM__Group__1 : rule__FSM__Group__1__Impl rule__FSM__Group__2 ;
+    // InternalFSM.g:221:1: rule__FSM__Group__1 : rule__FSM__Group__1__Impl rule__FSM__Group__2 ;
     public final void rule__FSM__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalFSM.g:252:1: ( rule__FSM__Group__1__Impl rule__FSM__Group__2 )
-            // InternalFSM.g:253:2: rule__FSM__Group__1__Impl rule__FSM__Group__2
+            // InternalFSM.g:225:1: ( rule__FSM__Group__1__Impl rule__FSM__Group__2 )
+            // InternalFSM.g:226:2: rule__FSM__Group__1__Impl rule__FSM__Group__2
             {
             pushFollow(FOLLOW_4);
             rule__FSM__Group__1__Impl();
@@ -754,20 +656,20 @@ public class InternalFSMParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FSM__Group__1__Impl"
-    // InternalFSM.g:260:1: rule__FSM__Group__1__Impl : ( 'FSM' ) ;
+    // InternalFSM.g:233:1: rule__FSM__Group__1__Impl : ( 'FSM' ) ;
     public final void rule__FSM__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalFSM.g:264:1: ( ( 'FSM' ) )
-            // InternalFSM.g:265:1: ( 'FSM' )
+            // InternalFSM.g:237:1: ( ( 'FSM' ) )
+            // InternalFSM.g:238:1: ( 'FSM' )
             {
-            // InternalFSM.g:265:1: ( 'FSM' )
-            // InternalFSM.g:266:2: 'FSM'
+            // InternalFSM.g:238:1: ( 'FSM' )
+            // InternalFSM.g:239:2: 'FSM'
             {
              before(grammarAccess.getFSMAccess().getFSMKeyword_1()); 
-            match(input,14,FOLLOW_2); 
+            match(input,11,FOLLOW_2); 
              after(grammarAccess.getFSMAccess().getFSMKeyword_1()); 
 
             }
@@ -791,14 +693,14 @@ public class InternalFSMParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FSM__Group__2"
-    // InternalFSM.g:275:1: rule__FSM__Group__2 : rule__FSM__Group__2__Impl rule__FSM__Group__3 ;
+    // InternalFSM.g:248:1: rule__FSM__Group__2 : rule__FSM__Group__2__Impl rule__FSM__Group__3 ;
     public final void rule__FSM__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalFSM.g:279:1: ( rule__FSM__Group__2__Impl rule__FSM__Group__3 )
-            // InternalFSM.g:280:2: rule__FSM__Group__2__Impl rule__FSM__Group__3
+            // InternalFSM.g:252:1: ( rule__FSM__Group__2__Impl rule__FSM__Group__3 )
+            // InternalFSM.g:253:2: rule__FSM__Group__2__Impl rule__FSM__Group__3
             {
             pushFollow(FOLLOW_5);
             rule__FSM__Group__2__Impl();
@@ -829,21 +731,21 @@ public class InternalFSMParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FSM__Group__2__Impl"
-    // InternalFSM.g:287:1: rule__FSM__Group__2__Impl : ( ( rule__FSM__NameAssignment_2 ) ) ;
+    // InternalFSM.g:260:1: rule__FSM__Group__2__Impl : ( ( rule__FSM__NameAssignment_2 ) ) ;
     public final void rule__FSM__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalFSM.g:291:1: ( ( ( rule__FSM__NameAssignment_2 ) ) )
-            // InternalFSM.g:292:1: ( ( rule__FSM__NameAssignment_2 ) )
+            // InternalFSM.g:264:1: ( ( ( rule__FSM__NameAssignment_2 ) ) )
+            // InternalFSM.g:265:1: ( ( rule__FSM__NameAssignment_2 ) )
             {
-            // InternalFSM.g:292:1: ( ( rule__FSM__NameAssignment_2 ) )
-            // InternalFSM.g:293:2: ( rule__FSM__NameAssignment_2 )
+            // InternalFSM.g:265:1: ( ( rule__FSM__NameAssignment_2 ) )
+            // InternalFSM.g:266:2: ( rule__FSM__NameAssignment_2 )
             {
              before(grammarAccess.getFSMAccess().getNameAssignment_2()); 
-            // InternalFSM.g:294:2: ( rule__FSM__NameAssignment_2 )
-            // InternalFSM.g:294:3: rule__FSM__NameAssignment_2
+            // InternalFSM.g:267:2: ( rule__FSM__NameAssignment_2 )
+            // InternalFSM.g:267:3: rule__FSM__NameAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__FSM__NameAssignment_2();
@@ -876,14 +778,14 @@ public class InternalFSMParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FSM__Group__3"
-    // InternalFSM.g:302:1: rule__FSM__Group__3 : rule__FSM__Group__3__Impl ;
+    // InternalFSM.g:275:1: rule__FSM__Group__3 : rule__FSM__Group__3__Impl ;
     public final void rule__FSM__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalFSM.g:306:1: ( rule__FSM__Group__3__Impl )
-            // InternalFSM.g:307:2: rule__FSM__Group__3__Impl
+            // InternalFSM.g:279:1: ( rule__FSM__Group__3__Impl )
+            // InternalFSM.g:280:2: rule__FSM__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__FSM__Group__3__Impl();
@@ -909,33 +811,33 @@ public class InternalFSMParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FSM__Group__3__Impl"
-    // InternalFSM.g:313:1: rule__FSM__Group__3__Impl : ( ( rule__FSM__Alternatives_3 )* ) ;
+    // InternalFSM.g:286:1: rule__FSM__Group__3__Impl : ( ( rule__FSM__Alternatives_3 )* ) ;
     public final void rule__FSM__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalFSM.g:317:1: ( ( ( rule__FSM__Alternatives_3 )* ) )
-            // InternalFSM.g:318:1: ( ( rule__FSM__Alternatives_3 )* )
+            // InternalFSM.g:290:1: ( ( ( rule__FSM__Alternatives_3 )* ) )
+            // InternalFSM.g:291:1: ( ( rule__FSM__Alternatives_3 )* )
             {
-            // InternalFSM.g:318:1: ( ( rule__FSM__Alternatives_3 )* )
-            // InternalFSM.g:319:2: ( rule__FSM__Alternatives_3 )*
+            // InternalFSM.g:291:1: ( ( rule__FSM__Alternatives_3 )* )
+            // InternalFSM.g:292:2: ( rule__FSM__Alternatives_3 )*
             {
              before(grammarAccess.getFSMAccess().getAlternatives_3()); 
-            // InternalFSM.g:320:2: ( rule__FSM__Alternatives_3 )*
-            loop4:
+            // InternalFSM.g:293:2: ( rule__FSM__Alternatives_3 )*
+            loop3:
             do {
-                int alt4=2;
-                int LA4_0 = input.LA(1);
+                int alt3=2;
+                int LA3_0 = input.LA(1);
 
-                if ( ((LA4_0>=15 && LA4_0<=16)) ) {
-                    alt4=1;
+                if ( ((LA3_0>=12 && LA3_0<=13)) ) {
+                    alt3=1;
                 }
 
 
-                switch (alt4) {
+                switch (alt3) {
             	case 1 :
-            	    // InternalFSM.g:320:3: rule__FSM__Alternatives_3
+            	    // InternalFSM.g:293:3: rule__FSM__Alternatives_3
             	    {
             	    pushFollow(FOLLOW_6);
             	    rule__FSM__Alternatives_3();
@@ -947,7 +849,7 @@ public class InternalFSMParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop4;
+            	    break loop3;
                 }
             } while (true);
 
@@ -974,14 +876,14 @@ public class InternalFSMParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FSM__Group_3_0__0"
-    // InternalFSM.g:329:1: rule__FSM__Group_3_0__0 : rule__FSM__Group_3_0__0__Impl rule__FSM__Group_3_0__1 ;
+    // InternalFSM.g:302:1: rule__FSM__Group_3_0__0 : rule__FSM__Group_3_0__0__Impl rule__FSM__Group_3_0__1 ;
     public final void rule__FSM__Group_3_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalFSM.g:333:1: ( rule__FSM__Group_3_0__0__Impl rule__FSM__Group_3_0__1 )
-            // InternalFSM.g:334:2: rule__FSM__Group_3_0__0__Impl rule__FSM__Group_3_0__1
+            // InternalFSM.g:306:1: ( rule__FSM__Group_3_0__0__Impl rule__FSM__Group_3_0__1 )
+            // InternalFSM.g:307:2: rule__FSM__Group_3_0__0__Impl rule__FSM__Group_3_0__1
             {
             pushFollow(FOLLOW_4);
             rule__FSM__Group_3_0__0__Impl();
@@ -1012,20 +914,20 @@ public class InternalFSMParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FSM__Group_3_0__0__Impl"
-    // InternalFSM.g:341:1: rule__FSM__Group_3_0__0__Impl : ( 'state' ) ;
+    // InternalFSM.g:314:1: rule__FSM__Group_3_0__0__Impl : ( 'state' ) ;
     public final void rule__FSM__Group_3_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalFSM.g:345:1: ( ( 'state' ) )
-            // InternalFSM.g:346:1: ( 'state' )
+            // InternalFSM.g:318:1: ( ( 'state' ) )
+            // InternalFSM.g:319:1: ( 'state' )
             {
-            // InternalFSM.g:346:1: ( 'state' )
-            // InternalFSM.g:347:2: 'state'
+            // InternalFSM.g:319:1: ( 'state' )
+            // InternalFSM.g:320:2: 'state'
             {
              before(grammarAccess.getFSMAccess().getStateKeyword_3_0_0()); 
-            match(input,15,FOLLOW_2); 
+            match(input,12,FOLLOW_2); 
              after(grammarAccess.getFSMAccess().getStateKeyword_3_0_0()); 
 
             }
@@ -1049,14 +951,14 @@ public class InternalFSMParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FSM__Group_3_0__1"
-    // InternalFSM.g:356:1: rule__FSM__Group_3_0__1 : rule__FSM__Group_3_0__1__Impl ;
+    // InternalFSM.g:329:1: rule__FSM__Group_3_0__1 : rule__FSM__Group_3_0__1__Impl ;
     public final void rule__FSM__Group_3_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalFSM.g:360:1: ( rule__FSM__Group_3_0__1__Impl )
-            // InternalFSM.g:361:2: rule__FSM__Group_3_0__1__Impl
+            // InternalFSM.g:333:1: ( rule__FSM__Group_3_0__1__Impl )
+            // InternalFSM.g:334:2: rule__FSM__Group_3_0__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__FSM__Group_3_0__1__Impl();
@@ -1082,21 +984,21 @@ public class InternalFSMParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FSM__Group_3_0__1__Impl"
-    // InternalFSM.g:367:1: rule__FSM__Group_3_0__1__Impl : ( ( rule__FSM__StateAssignment_3_0_1 ) ) ;
+    // InternalFSM.g:340:1: rule__FSM__Group_3_0__1__Impl : ( ( rule__FSM__StateAssignment_3_0_1 ) ) ;
     public final void rule__FSM__Group_3_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalFSM.g:371:1: ( ( ( rule__FSM__StateAssignment_3_0_1 ) ) )
-            // InternalFSM.g:372:1: ( ( rule__FSM__StateAssignment_3_0_1 ) )
+            // InternalFSM.g:344:1: ( ( ( rule__FSM__StateAssignment_3_0_1 ) ) )
+            // InternalFSM.g:345:1: ( ( rule__FSM__StateAssignment_3_0_1 ) )
             {
-            // InternalFSM.g:372:1: ( ( rule__FSM__StateAssignment_3_0_1 ) )
-            // InternalFSM.g:373:2: ( rule__FSM__StateAssignment_3_0_1 )
+            // InternalFSM.g:345:1: ( ( rule__FSM__StateAssignment_3_0_1 ) )
+            // InternalFSM.g:346:2: ( rule__FSM__StateAssignment_3_0_1 )
             {
              before(grammarAccess.getFSMAccess().getStateAssignment_3_0_1()); 
-            // InternalFSM.g:374:2: ( rule__FSM__StateAssignment_3_0_1 )
-            // InternalFSM.g:374:3: rule__FSM__StateAssignment_3_0_1
+            // InternalFSM.g:347:2: ( rule__FSM__StateAssignment_3_0_1 )
+            // InternalFSM.g:347:3: rule__FSM__StateAssignment_3_0_1
             {
             pushFollow(FOLLOW_2);
             rule__FSM__StateAssignment_3_0_1();
@@ -1129,14 +1031,14 @@ public class InternalFSMParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FSM__Group_3_1__0"
-    // InternalFSM.g:383:1: rule__FSM__Group_3_1__0 : rule__FSM__Group_3_1__0__Impl rule__FSM__Group_3_1__1 ;
+    // InternalFSM.g:356:1: rule__FSM__Group_3_1__0 : rule__FSM__Group_3_1__0__Impl rule__FSM__Group_3_1__1 ;
     public final void rule__FSM__Group_3_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalFSM.g:387:1: ( rule__FSM__Group_3_1__0__Impl rule__FSM__Group_3_1__1 )
-            // InternalFSM.g:388:2: rule__FSM__Group_3_1__0__Impl rule__FSM__Group_3_1__1
+            // InternalFSM.g:360:1: ( rule__FSM__Group_3_1__0__Impl rule__FSM__Group_3_1__1 )
+            // InternalFSM.g:361:2: rule__FSM__Group_3_1__0__Impl rule__FSM__Group_3_1__1
             {
             pushFollow(FOLLOW_7);
             rule__FSM__Group_3_1__0__Impl();
@@ -1167,20 +1069,20 @@ public class InternalFSMParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FSM__Group_3_1__0__Impl"
-    // InternalFSM.g:395:1: rule__FSM__Group_3_1__0__Impl : ( 'transition' ) ;
+    // InternalFSM.g:368:1: rule__FSM__Group_3_1__0__Impl : ( 'transition' ) ;
     public final void rule__FSM__Group_3_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalFSM.g:399:1: ( ( 'transition' ) )
-            // InternalFSM.g:400:1: ( 'transition' )
+            // InternalFSM.g:372:1: ( ( 'transition' ) )
+            // InternalFSM.g:373:1: ( 'transition' )
             {
-            // InternalFSM.g:400:1: ( 'transition' )
-            // InternalFSM.g:401:2: 'transition'
+            // InternalFSM.g:373:1: ( 'transition' )
+            // InternalFSM.g:374:2: 'transition'
             {
              before(grammarAccess.getFSMAccess().getTransitionKeyword_3_1_0()); 
-            match(input,16,FOLLOW_2); 
+            match(input,13,FOLLOW_2); 
              after(grammarAccess.getFSMAccess().getTransitionKeyword_3_1_0()); 
 
             }
@@ -1204,14 +1106,14 @@ public class InternalFSMParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FSM__Group_3_1__1"
-    // InternalFSM.g:410:1: rule__FSM__Group_3_1__1 : rule__FSM__Group_3_1__1__Impl ;
+    // InternalFSM.g:383:1: rule__FSM__Group_3_1__1 : rule__FSM__Group_3_1__1__Impl ;
     public final void rule__FSM__Group_3_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalFSM.g:414:1: ( rule__FSM__Group_3_1__1__Impl )
-            // InternalFSM.g:415:2: rule__FSM__Group_3_1__1__Impl
+            // InternalFSM.g:387:1: ( rule__FSM__Group_3_1__1__Impl )
+            // InternalFSM.g:388:2: rule__FSM__Group_3_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__FSM__Group_3_1__1__Impl();
@@ -1237,21 +1139,21 @@ public class InternalFSMParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FSM__Group_3_1__1__Impl"
-    // InternalFSM.g:421:1: rule__FSM__Group_3_1__1__Impl : ( ( rule__FSM__TransitionAssignment_3_1_1 ) ) ;
+    // InternalFSM.g:394:1: rule__FSM__Group_3_1__1__Impl : ( ( rule__FSM__TransitionAssignment_3_1_1 ) ) ;
     public final void rule__FSM__Group_3_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalFSM.g:425:1: ( ( ( rule__FSM__TransitionAssignment_3_1_1 ) ) )
-            // InternalFSM.g:426:1: ( ( rule__FSM__TransitionAssignment_3_1_1 ) )
+            // InternalFSM.g:398:1: ( ( ( rule__FSM__TransitionAssignment_3_1_1 ) ) )
+            // InternalFSM.g:399:1: ( ( rule__FSM__TransitionAssignment_3_1_1 ) )
             {
-            // InternalFSM.g:426:1: ( ( rule__FSM__TransitionAssignment_3_1_1 ) )
-            // InternalFSM.g:427:2: ( rule__FSM__TransitionAssignment_3_1_1 )
+            // InternalFSM.g:399:1: ( ( rule__FSM__TransitionAssignment_3_1_1 ) )
+            // InternalFSM.g:400:2: ( rule__FSM__TransitionAssignment_3_1_1 )
             {
              before(grammarAccess.getFSMAccess().getTransitionAssignment_3_1_1()); 
-            // InternalFSM.g:428:2: ( rule__FSM__TransitionAssignment_3_1_1 )
-            // InternalFSM.g:428:3: rule__FSM__TransitionAssignment_3_1_1
+            // InternalFSM.g:401:2: ( rule__FSM__TransitionAssignment_3_1_1 )
+            // InternalFSM.g:401:3: rule__FSM__TransitionAssignment_3_1_1
             {
             pushFollow(FOLLOW_2);
             rule__FSM__TransitionAssignment_3_1_1();
@@ -1284,14 +1186,14 @@ public class InternalFSMParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__State__Group__0"
-    // InternalFSM.g:437:1: rule__State__Group__0 : rule__State__Group__0__Impl rule__State__Group__1 ;
+    // InternalFSM.g:410:1: rule__State__Group__0 : rule__State__Group__0__Impl rule__State__Group__1 ;
     public final void rule__State__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalFSM.g:441:1: ( rule__State__Group__0__Impl rule__State__Group__1 )
-            // InternalFSM.g:442:2: rule__State__Group__0__Impl rule__State__Group__1
+            // InternalFSM.g:414:1: ( rule__State__Group__0__Impl rule__State__Group__1 )
+            // InternalFSM.g:415:2: rule__State__Group__0__Impl rule__State__Group__1
             {
             pushFollow(FOLLOW_4);
             rule__State__Group__0__Impl();
@@ -1322,21 +1224,21 @@ public class InternalFSMParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__State__Group__0__Impl"
-    // InternalFSM.g:449:1: rule__State__Group__0__Impl : ( () ) ;
+    // InternalFSM.g:422:1: rule__State__Group__0__Impl : ( () ) ;
     public final void rule__State__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalFSM.g:453:1: ( ( () ) )
-            // InternalFSM.g:454:1: ( () )
+            // InternalFSM.g:426:1: ( ( () ) )
+            // InternalFSM.g:427:1: ( () )
             {
-            // InternalFSM.g:454:1: ( () )
-            // InternalFSM.g:455:2: ()
+            // InternalFSM.g:427:1: ( () )
+            // InternalFSM.g:428:2: ()
             {
              before(grammarAccess.getStateAccess().getStateAction_0()); 
-            // InternalFSM.g:456:2: ()
-            // InternalFSM.g:456:3: 
+            // InternalFSM.g:429:2: ()
+            // InternalFSM.g:429:3: 
             {
             }
 
@@ -1359,14 +1261,14 @@ public class InternalFSMParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__State__Group__1"
-    // InternalFSM.g:464:1: rule__State__Group__1 : rule__State__Group__1__Impl ;
+    // InternalFSM.g:437:1: rule__State__Group__1 : rule__State__Group__1__Impl ;
     public final void rule__State__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalFSM.g:468:1: ( rule__State__Group__1__Impl )
-            // InternalFSM.g:469:2: rule__State__Group__1__Impl
+            // InternalFSM.g:441:1: ( rule__State__Group__1__Impl )
+            // InternalFSM.g:442:2: rule__State__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__State__Group__1__Impl();
@@ -1392,21 +1294,21 @@ public class InternalFSMParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__State__Group__1__Impl"
-    // InternalFSM.g:475:1: rule__State__Group__1__Impl : ( ( rule__State__NameAssignment_1 ) ) ;
+    // InternalFSM.g:448:1: rule__State__Group__1__Impl : ( ( rule__State__NameAssignment_1 ) ) ;
     public final void rule__State__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalFSM.g:479:1: ( ( ( rule__State__NameAssignment_1 ) ) )
-            // InternalFSM.g:480:1: ( ( rule__State__NameAssignment_1 ) )
+            // InternalFSM.g:452:1: ( ( ( rule__State__NameAssignment_1 ) ) )
+            // InternalFSM.g:453:1: ( ( rule__State__NameAssignment_1 ) )
             {
-            // InternalFSM.g:480:1: ( ( rule__State__NameAssignment_1 ) )
-            // InternalFSM.g:481:2: ( rule__State__NameAssignment_1 )
+            // InternalFSM.g:453:1: ( ( rule__State__NameAssignment_1 ) )
+            // InternalFSM.g:454:2: ( rule__State__NameAssignment_1 )
             {
              before(grammarAccess.getStateAccess().getNameAssignment_1()); 
-            // InternalFSM.g:482:2: ( rule__State__NameAssignment_1 )
-            // InternalFSM.g:482:3: rule__State__NameAssignment_1
+            // InternalFSM.g:455:2: ( rule__State__NameAssignment_1 )
+            // InternalFSM.g:455:3: rule__State__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__State__NameAssignment_1();
@@ -1439,14 +1341,14 @@ public class InternalFSMParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Transition__Group__0"
-    // InternalFSM.g:491:1: rule__Transition__Group__0 : rule__Transition__Group__0__Impl rule__Transition__Group__1 ;
+    // InternalFSM.g:464:1: rule__Transition__Group__0 : rule__Transition__Group__0__Impl rule__Transition__Group__1 ;
     public final void rule__Transition__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalFSM.g:495:1: ( rule__Transition__Group__0__Impl rule__Transition__Group__1 )
-            // InternalFSM.g:496:2: rule__Transition__Group__0__Impl rule__Transition__Group__1
+            // InternalFSM.g:468:1: ( rule__Transition__Group__0__Impl rule__Transition__Group__1 )
+            // InternalFSM.g:469:2: rule__Transition__Group__0__Impl rule__Transition__Group__1
             {
             pushFollow(FOLLOW_4);
             rule__Transition__Group__0__Impl();
@@ -1477,31 +1379,21 @@ public class InternalFSMParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Transition__Group__0__Impl"
-    // InternalFSM.g:503:1: rule__Transition__Group__0__Impl : ( ( rule__Transition__Alternatives_0 ) ) ;
+    // InternalFSM.g:476:1: rule__Transition__Group__0__Impl : ( 'transition' ) ;
     public final void rule__Transition__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalFSM.g:507:1: ( ( ( rule__Transition__Alternatives_0 ) ) )
-            // InternalFSM.g:508:1: ( ( rule__Transition__Alternatives_0 ) )
+            // InternalFSM.g:480:1: ( ( 'transition' ) )
+            // InternalFSM.g:481:1: ( 'transition' )
             {
-            // InternalFSM.g:508:1: ( ( rule__Transition__Alternatives_0 ) )
-            // InternalFSM.g:509:2: ( rule__Transition__Alternatives_0 )
+            // InternalFSM.g:481:1: ( 'transition' )
+            // InternalFSM.g:482:2: 'transition'
             {
-             before(grammarAccess.getTransitionAccess().getAlternatives_0()); 
-            // InternalFSM.g:510:2: ( rule__Transition__Alternatives_0 )
-            // InternalFSM.g:510:3: rule__Transition__Alternatives_0
-            {
-            pushFollow(FOLLOW_2);
-            rule__Transition__Alternatives_0();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getTransitionAccess().getAlternatives_0()); 
+             before(grammarAccess.getTransitionAccess().getTransitionKeyword_0()); 
+            match(input,13,FOLLOW_2); 
+             after(grammarAccess.getTransitionAccess().getTransitionKeyword_0()); 
 
             }
 
@@ -1524,16 +1416,16 @@ public class InternalFSMParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Transition__Group__1"
-    // InternalFSM.g:518:1: rule__Transition__Group__1 : rule__Transition__Group__1__Impl rule__Transition__Group__2 ;
+    // InternalFSM.g:491:1: rule__Transition__Group__1 : rule__Transition__Group__1__Impl rule__Transition__Group__2 ;
     public final void rule__Transition__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalFSM.g:522:1: ( rule__Transition__Group__1__Impl rule__Transition__Group__2 )
-            // InternalFSM.g:523:2: rule__Transition__Group__1__Impl rule__Transition__Group__2
+            // InternalFSM.g:495:1: ( rule__Transition__Group__1__Impl rule__Transition__Group__2 )
+            // InternalFSM.g:496:2: rule__Transition__Group__1__Impl rule__Transition__Group__2
             {
-            pushFollow(FOLLOW_8);
+            pushFollow(FOLLOW_4);
             rule__Transition__Group__1__Impl();
 
             state._fsp--;
@@ -1562,31 +1454,31 @@ public class InternalFSMParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Transition__Group__1__Impl"
-    // InternalFSM.g:530:1: rule__Transition__Group__1__Impl : ( ( rule__Transition__ToAssignment_1 ) ) ;
+    // InternalFSM.g:503:1: rule__Transition__Group__1__Impl : ( ( rule__Transition__NameAssignment_1 ) ) ;
     public final void rule__Transition__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalFSM.g:534:1: ( ( ( rule__Transition__ToAssignment_1 ) ) )
-            // InternalFSM.g:535:1: ( ( rule__Transition__ToAssignment_1 ) )
+            // InternalFSM.g:507:1: ( ( ( rule__Transition__NameAssignment_1 ) ) )
+            // InternalFSM.g:508:1: ( ( rule__Transition__NameAssignment_1 ) )
             {
-            // InternalFSM.g:535:1: ( ( rule__Transition__ToAssignment_1 ) )
-            // InternalFSM.g:536:2: ( rule__Transition__ToAssignment_1 )
+            // InternalFSM.g:508:1: ( ( rule__Transition__NameAssignment_1 ) )
+            // InternalFSM.g:509:2: ( rule__Transition__NameAssignment_1 )
             {
-             before(grammarAccess.getTransitionAccess().getToAssignment_1()); 
-            // InternalFSM.g:537:2: ( rule__Transition__ToAssignment_1 )
-            // InternalFSM.g:537:3: rule__Transition__ToAssignment_1
+             before(grammarAccess.getTransitionAccess().getNameAssignment_1()); 
+            // InternalFSM.g:510:2: ( rule__Transition__NameAssignment_1 )
+            // InternalFSM.g:510:3: rule__Transition__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
-            rule__Transition__ToAssignment_1();
+            rule__Transition__NameAssignment_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getTransitionAccess().getToAssignment_1()); 
+             after(grammarAccess.getTransitionAccess().getNameAssignment_1()); 
 
             }
 
@@ -1609,16 +1501,16 @@ public class InternalFSMParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Transition__Group__2"
-    // InternalFSM.g:545:1: rule__Transition__Group__2 : rule__Transition__Group__2__Impl rule__Transition__Group__3 ;
+    // InternalFSM.g:518:1: rule__Transition__Group__2 : rule__Transition__Group__2__Impl rule__Transition__Group__3 ;
     public final void rule__Transition__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalFSM.g:549:1: ( rule__Transition__Group__2__Impl rule__Transition__Group__3 )
-            // InternalFSM.g:550:2: rule__Transition__Group__2__Impl rule__Transition__Group__3
+            // InternalFSM.g:522:1: ( rule__Transition__Group__2__Impl rule__Transition__Group__3 )
+            // InternalFSM.g:523:2: rule__Transition__Group__2__Impl rule__Transition__Group__3
             {
-            pushFollow(FOLLOW_4);
+            pushFollow(FOLLOW_8);
             rule__Transition__Group__2__Impl();
 
             state._fsp--;
@@ -1647,21 +1539,31 @@ public class InternalFSMParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Transition__Group__2__Impl"
-    // InternalFSM.g:557:1: rule__Transition__Group__2__Impl : ( '->' ) ;
+    // InternalFSM.g:530:1: rule__Transition__Group__2__Impl : ( ( rule__Transition__ToAssignment_2 ) ) ;
     public final void rule__Transition__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalFSM.g:561:1: ( ( '->' ) )
-            // InternalFSM.g:562:1: ( '->' )
+            // InternalFSM.g:534:1: ( ( ( rule__Transition__ToAssignment_2 ) ) )
+            // InternalFSM.g:535:1: ( ( rule__Transition__ToAssignment_2 ) )
             {
-            // InternalFSM.g:562:1: ( '->' )
-            // InternalFSM.g:563:2: '->'
+            // InternalFSM.g:535:1: ( ( rule__Transition__ToAssignment_2 ) )
+            // InternalFSM.g:536:2: ( rule__Transition__ToAssignment_2 )
             {
-             before(grammarAccess.getTransitionAccess().getHyphenMinusGreaterThanSignKeyword_2()); 
-            match(input,17,FOLLOW_2); 
-             after(grammarAccess.getTransitionAccess().getHyphenMinusGreaterThanSignKeyword_2()); 
+             before(grammarAccess.getTransitionAccess().getToAssignment_2()); 
+            // InternalFSM.g:537:2: ( rule__Transition__ToAssignment_2 )
+            // InternalFSM.g:537:3: rule__Transition__ToAssignment_2
+            {
+            pushFollow(FOLLOW_2);
+            rule__Transition__ToAssignment_2();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getTransitionAccess().getToAssignment_2()); 
 
             }
 
@@ -1684,17 +1586,22 @@ public class InternalFSMParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Transition__Group__3"
-    // InternalFSM.g:572:1: rule__Transition__Group__3 : rule__Transition__Group__3__Impl ;
+    // InternalFSM.g:545:1: rule__Transition__Group__3 : rule__Transition__Group__3__Impl rule__Transition__Group__4 ;
     public final void rule__Transition__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalFSM.g:576:1: ( rule__Transition__Group__3__Impl )
-            // InternalFSM.g:577:2: rule__Transition__Group__3__Impl
+            // InternalFSM.g:549:1: ( rule__Transition__Group__3__Impl rule__Transition__Group__4 )
+            // InternalFSM.g:550:2: rule__Transition__Group__3__Impl rule__Transition__Group__4
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_4);
             rule__Transition__Group__3__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Transition__Group__4();
 
             state._fsp--;
 
@@ -1717,31 +1624,21 @@ public class InternalFSMParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Transition__Group__3__Impl"
-    // InternalFSM.g:583:1: rule__Transition__Group__3__Impl : ( ( rule__Transition__FromAssignment_3 ) ) ;
+    // InternalFSM.g:557:1: rule__Transition__Group__3__Impl : ( '->' ) ;
     public final void rule__Transition__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalFSM.g:587:1: ( ( ( rule__Transition__FromAssignment_3 ) ) )
-            // InternalFSM.g:588:1: ( ( rule__Transition__FromAssignment_3 ) )
+            // InternalFSM.g:561:1: ( ( '->' ) )
+            // InternalFSM.g:562:1: ( '->' )
             {
-            // InternalFSM.g:588:1: ( ( rule__Transition__FromAssignment_3 ) )
-            // InternalFSM.g:589:2: ( rule__Transition__FromAssignment_3 )
+            // InternalFSM.g:562:1: ( '->' )
+            // InternalFSM.g:563:2: '->'
             {
-             before(grammarAccess.getTransitionAccess().getFromAssignment_3()); 
-            // InternalFSM.g:590:2: ( rule__Transition__FromAssignment_3 )
-            // InternalFSM.g:590:3: rule__Transition__FromAssignment_3
-            {
-            pushFollow(FOLLOW_2);
-            rule__Transition__FromAssignment_3();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getTransitionAccess().getFromAssignment_3()); 
+             before(grammarAccess.getTransitionAccess().getHyphenMinusGreaterThanSignKeyword_3()); 
+            match(input,14,FOLLOW_2); 
+             after(grammarAccess.getTransitionAccess().getHyphenMinusGreaterThanSignKeyword_3()); 
 
             }
 
@@ -1761,6 +1658,86 @@ public class InternalFSMParser extends AbstractInternalContentAssistParser {
         return ;
     }
     // $ANTLR end "rule__Transition__Group__3__Impl"
+
+
+    // $ANTLR start "rule__Transition__Group__4"
+    // InternalFSM.g:572:1: rule__Transition__Group__4 : rule__Transition__Group__4__Impl ;
+    public final void rule__Transition__Group__4() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalFSM.g:576:1: ( rule__Transition__Group__4__Impl )
+            // InternalFSM.g:577:2: rule__Transition__Group__4__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__Transition__Group__4__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Transition__Group__4"
+
+
+    // $ANTLR start "rule__Transition__Group__4__Impl"
+    // InternalFSM.g:583:1: rule__Transition__Group__4__Impl : ( ( rule__Transition__FromAssignment_4 ) ) ;
+    public final void rule__Transition__Group__4__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalFSM.g:587:1: ( ( ( rule__Transition__FromAssignment_4 ) ) )
+            // InternalFSM.g:588:1: ( ( rule__Transition__FromAssignment_4 ) )
+            {
+            // InternalFSM.g:588:1: ( ( rule__Transition__FromAssignment_4 ) )
+            // InternalFSM.g:589:2: ( rule__Transition__FromAssignment_4 )
+            {
+             before(grammarAccess.getTransitionAccess().getFromAssignment_4()); 
+            // InternalFSM.g:590:2: ( rule__Transition__FromAssignment_4 )
+            // InternalFSM.g:590:3: rule__Transition__FromAssignment_4
+            {
+            pushFollow(FOLLOW_2);
+            rule__Transition__FromAssignment_4();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getTransitionAccess().getFromAssignment_4()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Transition__Group__4__Impl"
 
 
     // $ANTLR start "rule__FSM__NameAssignment_2"
@@ -1927,34 +1904,26 @@ public class InternalFSMParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__State__NameAssignment_1"
 
 
-    // $ANTLR start "rule__Transition__ToAssignment_1"
-    // InternalFSM.g:659:1: rule__Transition__ToAssignment_1 : ( ( ruleEString ) ) ;
-    public final void rule__Transition__ToAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__Transition__NameAssignment_1"
+    // InternalFSM.g:659:1: rule__Transition__NameAssignment_1 : ( ruleEString ) ;
+    public final void rule__Transition__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalFSM.g:663:1: ( ( ( ruleEString ) ) )
-            // InternalFSM.g:664:2: ( ( ruleEString ) )
+            // InternalFSM.g:663:1: ( ( ruleEString ) )
+            // InternalFSM.g:664:2: ( ruleEString )
             {
-            // InternalFSM.g:664:2: ( ( ruleEString ) )
-            // InternalFSM.g:665:3: ( ruleEString )
+            // InternalFSM.g:664:2: ( ruleEString )
+            // InternalFSM.g:665:3: ruleEString
             {
-             before(grammarAccess.getTransitionAccess().getToStateCrossReference_1_0()); 
-            // InternalFSM.g:666:3: ( ruleEString )
-            // InternalFSM.g:667:4: ruleEString
-            {
-             before(grammarAccess.getTransitionAccess().getToStateEStringParserRuleCall_1_0_1()); 
+             before(grammarAccess.getTransitionAccess().getNameEStringParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
             ruleEString();
 
             state._fsp--;
 
-             after(grammarAccess.getTransitionAccess().getToStateEStringParserRuleCall_1_0_1()); 
-
-            }
-
-             after(grammarAccess.getTransitionAccess().getToStateCrossReference_1_0()); 
+             after(grammarAccess.getTransitionAccess().getNameEStringParserRuleCall_1_0()); 
 
             }
 
@@ -1973,37 +1942,37 @@ public class InternalFSMParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Transition__ToAssignment_1"
+    // $ANTLR end "rule__Transition__NameAssignment_1"
 
 
-    // $ANTLR start "rule__Transition__FromAssignment_3"
-    // InternalFSM.g:678:1: rule__Transition__FromAssignment_3 : ( ( ruleEString ) ) ;
-    public final void rule__Transition__FromAssignment_3() throws RecognitionException {
+    // $ANTLR start "rule__Transition__ToAssignment_2"
+    // InternalFSM.g:674:1: rule__Transition__ToAssignment_2 : ( ( ruleEString ) ) ;
+    public final void rule__Transition__ToAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalFSM.g:682:1: ( ( ( ruleEString ) ) )
-            // InternalFSM.g:683:2: ( ( ruleEString ) )
+            // InternalFSM.g:678:1: ( ( ( ruleEString ) ) )
+            // InternalFSM.g:679:2: ( ( ruleEString ) )
             {
-            // InternalFSM.g:683:2: ( ( ruleEString ) )
-            // InternalFSM.g:684:3: ( ruleEString )
+            // InternalFSM.g:679:2: ( ( ruleEString ) )
+            // InternalFSM.g:680:3: ( ruleEString )
             {
-             before(grammarAccess.getTransitionAccess().getFromStateCrossReference_3_0()); 
-            // InternalFSM.g:685:3: ( ruleEString )
-            // InternalFSM.g:686:4: ruleEString
+             before(grammarAccess.getTransitionAccess().getToStateCrossReference_2_0()); 
+            // InternalFSM.g:681:3: ( ruleEString )
+            // InternalFSM.g:682:4: ruleEString
             {
-             before(grammarAccess.getTransitionAccess().getFromStateEStringParserRuleCall_3_0_1()); 
+             before(grammarAccess.getTransitionAccess().getToStateEStringParserRuleCall_2_0_1()); 
             pushFollow(FOLLOW_2);
             ruleEString();
 
             state._fsp--;
 
-             after(grammarAccess.getTransitionAccess().getFromStateEStringParserRuleCall_3_0_1()); 
+             after(grammarAccess.getTransitionAccess().getToStateEStringParserRuleCall_2_0_1()); 
 
             }
 
-             after(grammarAccess.getTransitionAccess().getFromStateCrossReference_3_0()); 
+             after(grammarAccess.getTransitionAccess().getToStateCrossReference_2_0()); 
 
             }
 
@@ -2022,7 +1991,56 @@ public class InternalFSMParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Transition__FromAssignment_3"
+    // $ANTLR end "rule__Transition__ToAssignment_2"
+
+
+    // $ANTLR start "rule__Transition__FromAssignment_4"
+    // InternalFSM.g:693:1: rule__Transition__FromAssignment_4 : ( ( ruleEString ) ) ;
+    public final void rule__Transition__FromAssignment_4() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalFSM.g:697:1: ( ( ( ruleEString ) ) )
+            // InternalFSM.g:698:2: ( ( ruleEString ) )
+            {
+            // InternalFSM.g:698:2: ( ( ruleEString ) )
+            // InternalFSM.g:699:3: ( ruleEString )
+            {
+             before(grammarAccess.getTransitionAccess().getFromStateCrossReference_4_0()); 
+            // InternalFSM.g:700:3: ( ruleEString )
+            // InternalFSM.g:701:4: ruleEString
+            {
+             before(grammarAccess.getTransitionAccess().getFromStateEStringParserRuleCall_4_0_1()); 
+            pushFollow(FOLLOW_2);
+            ruleEString();
+
+            state._fsp--;
+
+             after(grammarAccess.getTransitionAccess().getFromStateEStringParserRuleCall_4_0_1()); 
+
+            }
+
+             after(grammarAccess.getTransitionAccess().getFromStateCrossReference_4_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Transition__FromAssignment_4"
 
     // Delegated rules
 
@@ -2031,11 +2049,11 @@ public class InternalFSMParser extends AbstractInternalContentAssistParser {
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000000800L});
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000000030L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000018000L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000018002L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000003800L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000003000L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000003002L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000004000L});
 
 }

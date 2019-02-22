@@ -22,7 +22,7 @@ State returns State:
 
 //declaration of transition by an action and the two states affected
 Transition returns Transition:
-	('close' | 'open' | 'stop' ) to=[State|EString]'->' from=[State|EString];
+	'transition' name=EString to=[State|EString]'->' from=[State|EString];
 	
 	
 
